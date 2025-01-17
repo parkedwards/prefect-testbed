@@ -6,15 +6,41 @@
 name: prefect-testbed
 
 # build section allows you to manage and build docker images
-build: null
+build:
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push: null
+push:
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
 - prefect.deployments.steps.git_clone:
     repository: https://github.com/parkedwards/prefect-testbed.git
     branch: main
-    # access_token: '{{ prefect.blocks.secret.deployment-hello-world-mex-hello-world-entry-repo-token
-    #   }}'
+
+deployments:
+- name: print-my-ip
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  entrypoint: flows/managed-exec-print-ip.py:print_my_ip
+  parameters: {}
+  work_pool:
+    name: managed-execution-static-ip
+    work_queue_name:
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules: []
+- name: mass-task-attack
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  entrypoint: flows/managed-exec-mass-taskattack.py:mass_task_attack
+  parameters: {}
+  work_pool:
+    name: managed-execution-static-ip
+    work_queue_name:
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules: []
