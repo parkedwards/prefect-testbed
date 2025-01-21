@@ -44,3 +44,29 @@ deployments:
     job_variables: {}
   enforce_parameter_schema: true
   schedules: []
+- name: mass-task-attack-prefect2
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  entrypoint: flows/managed-exec-mass-taskattack-prefect2.py:mass_task_attack_prefect2
+  parameters: {}
+  work_pool:
+    name: managed-execution-static-ip-prefect2
+    work_queue_name:
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules: []
+- name: mass-task-attack-prefect3
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  entrypoint: flows/managed-exec-mass-taskattack-prefect3.py:mass_task_attack_prefect3
+  parameters: {}
+  work_pool:
+    name: managed-execution-static-ip-prefect3
+    work_queue_name:
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules: []
