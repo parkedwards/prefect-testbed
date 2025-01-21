@@ -1,12 +1,10 @@
 from prefect import flow, task
-import requests
+import time
 
 @task(log_prints=True)
 def connect_n_sleep(n):
   print(f"Connecting... {n}")
-  response = requests.get("https://curlmyip.org/")
-  print("MY IP:")
-  print(response.text)
+  time.sleep(30)
 
 @flow(log_prints=True)
 def mass_task_attack_prefect2():
