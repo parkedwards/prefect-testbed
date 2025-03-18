@@ -70,7 +70,7 @@ deployments:
     job_variables: {}
   enforce_parameter_schema: true
   schedules: []
-- name: default
+- name: mass-flow-attack-prefect3
   version:
   tags: []
   concurrency_limit:

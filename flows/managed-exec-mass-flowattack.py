@@ -6,7 +6,7 @@ import asyncio
 @flow
 async def attacking_subflow(n):
   print(f"Connecting... {n}")
-  await asyncio.sleep(random.uniform(1, 2))
+  await asyncio.sleep(random.uniform(3, 7))
   response = requests.get("https://curlmyip.org/")
   print("MY IP:")
   print(response.text)
