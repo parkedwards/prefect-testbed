@@ -70,3 +70,16 @@ deployments:
     job_variables: {}
   enforce_parameter_schema: true
   schedules: []
+- name: default
+  version:
+  tags: []
+  concurrency_limit:
+  description:
+  entrypoint: flows/managed-exec-mass-flowattack.py:mass_flow_attack
+  parameters: {}
+  work_pool:
+    name: managed-execution-static-ip-prefect3
+    work_queue_name:
+    job_variables: {}
+  enforce_parameter_schema: true
+  schedules: []

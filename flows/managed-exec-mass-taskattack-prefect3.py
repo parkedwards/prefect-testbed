@@ -11,7 +11,7 @@ def connect_n_sleep(n):
   response = requests.get("https://curlmyip.org/")
   print("MY IP:")
   print(response.text)
-j
+
 @flow(log_prints=True)
 def mass_task_attack_prefect3():
   futures = []
