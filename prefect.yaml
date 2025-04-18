@@ -31,6 +31,16 @@ deployments:
     job_variables: {}
   enforce_parameter_schema: true
   schedules: []
+  triggers:
+  - type: event
+    enabled: true
+    match:
+      prefect.resource.id: my.external.resource
+    expect:
+    - external.resource.pinged
+    parameters:
+      param_1: '{{ event }}'
+    name: print-my-ip__automation_1
 - name: mass-task-attack
   version:
   tags: []
